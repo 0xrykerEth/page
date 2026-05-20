@@ -1,12 +1,14 @@
 import './App.css';
+import React from 'react';
 import Navbar from './components/Navbar';
+import Summary from './components/Summary';
 
 function App() {
   return (
-    <div className="App">
+    <React.Fragment>
       <Navbar />
-      
-    </div>
+      <Summary />
+    </React.Fragment>
   );
 }
 

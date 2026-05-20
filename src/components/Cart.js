@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./Cart.css";
 
-const Backdrop = () => {
-  return <div className="backdrop"></div>;
+const Backdrop = (props) => {
+  return <div className="backdrop" onClick={props.onClose}></div>;
 };
 
-const ModalOverlay = () => {
+const ModalOverlay = (props) => {
   return (
     <div className="modal">
 
@@ -46,7 +46,7 @@ const ModalOverlay = () => {
       </div>
 
       <div className="actions">
-        <button>Close</button>
+        <button onClick={props.onClose}>Close</button>
         <button>Order</button>
       </div>
 
@@ -54,16 +54,16 @@ const ModalOverlay = () => {
   );
 };
 
-function Cart() {
+function Cart(props) {
   return (
     <>
       {ReactDOM.createPortal(
-        <Backdrop />,
+        <Backdrop onClose={props.onClose}  />,
         document.getElementById("overlays")
       )}
 
       {ReactDOM.createPortal(
-        <ModalOverlay />,
+        <ModalOverlay onClose={props.onClose} />,
         document.getElementById("overlays")
       )}
     </>

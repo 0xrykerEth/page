@@ -35,21 +35,45 @@ function Item() {
   },
 ];
 
-  return (
-    <section className="meals">
+  return (<section className="meals">
+
       {DUMMY_MEALS.map((meal) => (
         <div key={meal.id} className="meal">
-          <h2>{meal.name}</h2>
 
-          <p className="desc">
-            {meal.description}
-          </p>
+          <div>
+            <h2>{meal.name}</h2>
 
-          <p className="price">
-            ${meal.price}
-          </p>
+            <p className="desc">
+              {meal.description}
+            </p>
+
+            <p className="price">
+              ${meal.price}
+            </p>
+          </div>
+
+          <div className="actions">
+
+            <div className="quantity">
+              <label>Amount</label>
+
+              <input
+                type="number"
+                min="1"
+                max="5"
+                defaultValue="1"
+              />
+            </div>
+
+            <button>
+              + Add
+            </button>
+
+          </div>
+
         </div>
       ))}
+
     </section>
   );
 }

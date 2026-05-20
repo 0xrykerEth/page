@@ -36,3 +36,64 @@
 
   font-size: 1.3rem;
 }
+
+.meals {
+  width: 80%;
+  margin: 2rem auto;
+
+  background: white;
+
+  padding: 1rem;
+
+  border-radius: 12px;
+}
+
+.meal {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 1rem 0;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.8rem;
+
+  align-items: flex-end;
+}
+
+.quantity {
+  display: flex;
+
+  gap: 0.5rem;
+
+  align-items: center;
+}
+
+.quantity input {
+  width: 50px;
+
+  padding: 0.3rem;
+}
+
+button {
+  background: brown;
+
+  color: white;
+
+  border: none;
+
+  padding: 0.5rem 1.5rem;
+
+  border-radius: 20px;
+
+  cursor: pointer;
+}

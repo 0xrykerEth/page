@@ -1,0 +1,37 @@
+.navbar{
+    background-color: red;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.button {
+  display: flex;              
+  align-items: center;        
+  gap: 10px;                  
+
+  background: #4d1601;
+  color: white;
+
+  border: none;
+  border-radius: 25px;        
+
+  padding: 12px 28px;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #2c0d00;
+}
+
+.badge {
+  background: #b94517;
+
+  padding: 4px 12px;
+
+  border-radius: 20px;        
+
+  font-weight: bold;
+}

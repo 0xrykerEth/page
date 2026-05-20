@@ -1,0 +1,38 @@
+.meals {
+  width: 80%;
+  margin: 2rem auto;
+
+  background: white;
+
+  border-radius: 12px;
+
+  padding: 1rem;
+}
+
+.meal {
+  padding: 1rem 0;
+
+  border-bottom: 1px solid #ccc;
+}
+
+.meal:last-child {
+  border-bottom: none;
+}
+
+.meal h2 {
+  margin-bottom: 0.5rem;
+}
+
+.desc {
+  font-style: italic;
+
+  color: #555;
+}
+
+.price {
+  color: brown;
+
+  font-weight: bold;
+
+  font-size: 1.3rem;
+}

@@ -9,6 +9,16 @@ const Backdrop = (props) => {
 
 const ModalOverlay = (props) => {
   const cartCtx = React.useContext(CartContext);
+  const reduceHandler = (id) => {
+    const existing = cartCtx.items.find((item) => item.id === id);
+
+    if(existing){
+      if(existing.amount > 1){
+        cartCtx.addItem({...existing, amount: -1});
+      }else
+        cartCtx.removeItem(id);
+    }
+  }
   return (
     <div className="modal">
       <div className="cart-items">
@@ -16,8 +26,12 @@ const ModalOverlay = (props) => {
           <div key={item.id} className="cart-item">
             <h3>{item.name}</h3>
             <p>${item.price.toFixed(2)} x {item.amount}</p>
+            <button onClick={() => cartCtx.addItem({...item, amount: 1})}>+</button>
+            <button onClick={() => reduceHandler(item.id)}>-</button>
+            <button onClick={() => cartCtx.removeItem(item.id)}>Delete Item</button>
           </div>
         ))}
+        
       </div>
 
       <div className="total">

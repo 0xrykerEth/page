@@ -57,7 +57,7 @@ li {
 .actions {
   display: flex;
 
-  justify-content: flex-end;
+  align-items: flex-end;
 
   gap: 1rem;
 
@@ -84,4 +84,17 @@ li {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.cart-items {
+  max-height: 300px;
+
+  overflow-y: auto;
+}
+cart-item{
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 1rem;
 }

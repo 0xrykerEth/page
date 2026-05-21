@@ -1,7 +1,9 @@
 import React from 'react'
 import './Item.css'
+import CartContext from './CartContext';
 
 function Item() {
+    const cartCtx = React.useContext(CartContext);
     const DUMMY_MEALS = [
   {
     id: "m1",
@@ -65,7 +67,14 @@ function Item() {
               />
             </div>
 
-            <button>
+            <button onClick={() => {
+              cartCtx.addItem({
+                id : meal.id,
+                name : meal.name,
+                price : meal.price,
+                amount: 1
+              })
+            }}>
               + Add
             </button>
 

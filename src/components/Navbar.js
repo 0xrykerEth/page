@@ -1,7 +1,9 @@
 import React from 'react';
 import './navbar.css';
+import CartContext from './CartContext';
 
 function Navbar(props) {
+  const cartCtx = React.useContext(CartContext);
   return (
     <div className='navbar'>
         <div>
@@ -11,7 +13,7 @@ function Navbar(props) {
             <button className="button" onClick={props.onOpen}>
             <span className="icon">🛒</span>
             <span>Your Cart</span>
-            <span className="badge">0</span>
+            <span className="badge">{cartCtx.items.length}</span>
             </button>
         </div>
     </div>

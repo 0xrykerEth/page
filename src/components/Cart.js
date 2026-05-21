@@ -1,48 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./Cart.css";
+import CartContext from "./CartContext";
 
 const Backdrop = (props) => {
   return <div className="backdrop" onClick={props.onClose}></div>;
 };
 
 const ModalOverlay = (props) => {
+  const cartCtx = React.useContext(CartContext);
   return (
     <div className="modal">
-
-      <ul>
-
-        <li>
-          <div>
-            <h2>Sushi</h2>
-            <p>$22.99</p>
+      <div className="cart-items">
+        {cartCtx.items.map((item) => (
+          <div key={item.id} className="cart-item">
+            <h3>{item.name}</h3>
+            <p>${item.price.toFixed(2)} x {item.amount}</p>
           </div>
-
-          <div>
-            <button>-</button>
-            <span>2</span>
-            <button>+</button>
-          </div>
-        </li>
-
-        <li>
-          <div>
-            <h2>Burger</h2>
-            <p>$12.99</p>
-          </div>
-
-          <div>
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
-          </div>
-        </li>
-
-      </ul>
+        ))}
+      </div>
 
       <div className="total">
         <h2>Total Amount</h2>
-        <h2>$58.97</h2>
+        <h2>${cartCtx.totalAmount.toFixed(2)}</h2>
       </div>
 
       <div className="actions">
